@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JustEase Legal Translator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Merriweather', 'serif'],
+            },
+            colors: {
+              legal: {
+                50: '#F5F7FA',   /* Light Grey-Blue Background */
+                100: '#E4E7EB',
+                200: '#CBD2D9',
+                300: '#9AA5B1',
+                400: '#7B8794',
+                500: '#616E7C',
+                600: '#3E4C59',
+                700: '#1B365D',   /* Primary Navy */
+                800: '#0F2445',
+                900: '#081226',   /* Deepest Navy */
+              }
+            },
+            boxShadow: {
+              'soft': '0 4px 6px -1px rgba(27, 54, 93, 0.05), 0 2px 4px -1px rgba(27, 54, 93, 0.03)',
+              'inner-light': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.02)',
+            }
+          }
+        }
+      }
+    </script>
+    <!-- PDF.js Legacy Worker Setup for browser environments without bundlers -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "docx": "https://esm.sh/docx@^9.5.2",
+    "file-saver": "https://esm.sh/file-saver@^2.0.5"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-legal-50 text-legal-900 antialiased h-screen overflow-hidden selection:bg-legal-200 selection:text-legal-900">
+    <div id="root" class="h-full flex flex-col"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
